@@ -13,6 +13,7 @@
 		E129A84C267005EF00B9647C /* ScanRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E129A84B267005EF00B9647C /* ScanRowView.swift */; };
 		E129A84F2670094500B9647C /* SavedScans.swift in Sources */ = {isa = PBXBuildFile; fileRef = E129A84E2670094500B9647C /* SavedScans.swift */; };
 		E129A852267015A200B9647C /* QuikCode+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E129A851267015A200B9647C /* QuikCode+Date.swift */; };
+		E129A8552670192700B9647C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E129A8542670192700B9647C /* LICENSE */; };
 		E19EAE5D266FF67E00C9D5A0 /* QuikCodeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19EAE5C266FF67E00C9D5A0 /* QuikCodeApp.swift */; };
 		E19EAE5F266FF67E00C9D5A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19EAE5E266FF67E00C9D5A0 /* ContentView.swift */; };
 		E19EAE61266FF68000C9D5A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E19EAE60266FF68000C9D5A0 /* Assets.xcassets */; };
@@ -26,6 +27,8 @@
 		E129A84B267005EF00B9647C /* ScanRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanRowView.swift; sourceTree = "<group>"; };
 		E129A84E2670094500B9647C /* SavedScans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedScans.swift; sourceTree = "<group>"; };
 		E129A851267015A200B9647C /* QuikCode+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuikCode+Date.swift"; sourceTree = "<group>"; };
+		E129A853267018A100B9647C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E129A8542670192700B9647C /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		E19EAE59266FF67E00C9D5A0 /* QuikCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuikCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E19EAE5C266FF67E00C9D5A0 /* QuikCodeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuikCodeApp.swift; sourceTree = "<group>"; };
 		E19EAE5E266FF67E00C9D5A0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,6 +87,8 @@
 		E19EAE50266FF67E00C9D5A0 = {
 			isa = PBXGroup;
 			children = (
+				E129A853267018A100B9647C /* README.md */,
+				E129A8542670192700B9647C /* LICENSE */,
 				E19EAE5B266FF67E00C9D5A0 /* QuikCode */,
 				E19EAE5A266FF67E00C9D5A0 /* Products */,
 			);
@@ -183,6 +188,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E129A8552670192700B9647C /* LICENSE in Resources */,
 				E19EAE64266FF68000C9D5A0 /* Preview Assets.xcassets in Resources */,
 				E19EAE61266FF68000C9D5A0 /* Assets.xcassets in Resources */,
 			);
