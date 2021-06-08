@@ -7,18 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E129A844266FFF2D00B9647C /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = E129A843266FFF2D00B9647C /* SwiftUIX */; };
+		E129A8472670008100B9647C /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E129A8462670008100B9647C /* ResultsView.swift */; };
+		E129A84A267005CA00B9647C /* Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = E129A849267005CA00B9647C /* Scan.swift */; };
+		E129A84C267005EF00B9647C /* ScanRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E129A84B267005EF00B9647C /* ScanRowView.swift */; };
+		E129A84F2670094500B9647C /* SavedScans.swift in Sources */ = {isa = PBXBuildFile; fileRef = E129A84E2670094500B9647C /* SavedScans.swift */; };
+		E129A852267015A200B9647C /* QuikCode+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E129A851267015A200B9647C /* QuikCode+Date.swift */; };
 		E19EAE5D266FF67E00C9D5A0 /* QuikCodeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19EAE5C266FF67E00C9D5A0 /* QuikCodeApp.swift */; };
 		E19EAE5F266FF67E00C9D5A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19EAE5E266FF67E00C9D5A0 /* ContentView.swift */; };
 		E19EAE61266FF68000C9D5A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E19EAE60266FF68000C9D5A0 /* Assets.xcassets */; };
 		E19EAE64266FF68000C9D5A0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E19EAE63266FF68000C9D5A0 /* Preview Assets.xcassets */; };
+		E19EAE6B266FFB3E00C9D5A0 /* QuikCode+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19EAE6A266FFB3E00C9D5A0 /* QuikCode+Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E129A8462670008100B9647C /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
+		E129A849267005CA00B9647C /* Scan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scan.swift; sourceTree = "<group>"; };
+		E129A84B267005EF00B9647C /* ScanRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanRowView.swift; sourceTree = "<group>"; };
+		E129A84E2670094500B9647C /* SavedScans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedScans.swift; sourceTree = "<group>"; };
+		E129A851267015A200B9647C /* QuikCode+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuikCode+Date.swift"; sourceTree = "<group>"; };
 		E19EAE59266FF67E00C9D5A0 /* QuikCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuikCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E19EAE5C266FF67E00C9D5A0 /* QuikCodeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuikCodeApp.swift; sourceTree = "<group>"; };
 		E19EAE5E266FF67E00C9D5A0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E19EAE60266FF68000C9D5A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E19EAE63266FF68000C9D5A0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E19EAE6A266FFB3E00C9D5A0 /* QuikCode+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuikCode+Color.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,12 +39,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E129A844266FFF2D00B9647C /* SwiftUIX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E129A8452670007800B9647C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E19EAE5E266FF67E00C9D5A0 /* ContentView.swift */,
+				E129A8462670008100B9647C /* ResultsView.swift */,
+				E129A84B267005EF00B9647C /* ScanRowView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E129A848267005BC00B9647C /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				E129A849267005CA00B9647C /* Scan.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		E129A84D2670093900B9647C /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				E129A84E2670094500B9647C /* SavedScans.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		E129A8502670159600B9647C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E19EAE6A266FFB3E00C9D5A0 /* QuikCode+Color.swift */,
+				E129A851267015A200B9647C /* QuikCode+Date.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E19EAE50266FF67E00C9D5A0 = {
 			isa = PBXGroup;
 			children = (
@@ -51,10 +100,13 @@
 		E19EAE5B266FF67E00C9D5A0 /* QuikCode */ = {
 			isa = PBXGroup;
 			children = (
-				E19EAE5C266FF67E00C9D5A0 /* QuikCodeApp.swift */,
-				E19EAE5E266FF67E00C9D5A0 /* ContentView.swift */,
 				E19EAE60266FF68000C9D5A0 /* Assets.xcassets */,
 				E19EAE62266FF68000C9D5A0 /* Preview Content */,
+				E129A8502670159600B9647C /* Extensions */,
+				E129A84D2670093900B9647C /* Other */,
+				E129A848267005BC00B9647C /* Structs */,
+				E129A8452670007800B9647C /* Views */,
+				E19EAE5C266FF67E00C9D5A0 /* QuikCodeApp.swift */,
 			);
 			path = QuikCode;
 			sourceTree = "<group>";
@@ -83,6 +135,9 @@
 			dependencies = (
 			);
 			name = QuikCode;
+			packageProductDependencies = (
+				E129A843266FFF2D00B9647C /* SwiftUIX */,
+			);
 			productName = QuikCode;
 			productReference = E19EAE59266FF67E00C9D5A0 /* QuikCode.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +166,9 @@
 				Base,
 			);
 			mainGroup = E19EAE50266FF67E00C9D5A0;
+			packageReferences = (
+				E129A842266FFF2D00B9647C /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+			);
 			productRefGroup = E19EAE5A266FF67E00C9D5A0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,7 +195,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E129A84C267005EF00B9647C /* ScanRowView.swift in Sources */,
+				E129A84F2670094500B9647C /* SavedScans.swift in Sources */,
 				E19EAE5F266FF67E00C9D5A0 /* ContentView.swift in Sources */,
+				E129A84A267005CA00B9647C /* Scan.swift in Sources */,
+				E129A852267015A200B9647C /* QuikCode+Date.swift in Sources */,
+				E129A8472670008100B9647C /* ResultsView.swift in Sources */,
+				E19EAE6B266FFB3E00C9D5A0 /* QuikCode+Color.swift in Sources */,
 				E19EAE5D266FF67E00C9D5A0 /* QuikCodeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,7 +341,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +371,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -343,6 +407,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E129A842266FFF2D00B9647C /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E129A843266FFF2D00B9647C /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E129A842266FFF2D00B9647C /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E19EAE51266FF67E00C9D5A0 /* Project object */;
 }
