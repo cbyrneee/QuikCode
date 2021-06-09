@@ -19,6 +19,7 @@
 		E19EAE61266FF68000C9D5A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E19EAE60266FF68000C9D5A0 /* Assets.xcassets */; };
 		E19EAE64266FF68000C9D5A0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E19EAE63266FF68000C9D5A0 /* Preview Assets.xcassets */; };
 		E19EAE6B266FFB3E00C9D5A0 /* QuikCode+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19EAE6A266FFB3E00C9D5A0 /* QuikCode+Color.swift */; };
+		E1FDEF852670AC34006CE90C /* QRResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FDEF842670AC34006CE90C /* QRResultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		E19EAE60266FF68000C9D5A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E19EAE63266FF68000C9D5A0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E19EAE6A266FFB3E00C9D5A0 /* QuikCode+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuikCode+Color.swift"; sourceTree = "<group>"; };
+		E1FDEF842670AC34006CE90C /* QRResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRResultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 				E19EAE5E266FF67E00C9D5A0 /* ContentView.swift */,
 				E129A8462670008100B9647C /* ResultsView.swift */,
 				E129A84B267005EF00B9647C /* ScanRowView.swift */,
+				E1FDEF842670AC34006CE90C /* QRResultView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				E19EAE5F266FF67E00C9D5A0 /* ContentView.swift in Sources */,
 				E129A84A267005CA00B9647C /* Scan.swift in Sources */,
 				E129A852267015A200B9647C /* QuikCode+Date.swift in Sources */,
+				E1FDEF852670AC34006CE90C /* QRResultView.swift in Sources */,
 				E129A8472670008100B9647C /* ResultsView.swift in Sources */,
 				E19EAE6B266FFB3E00C9D5A0 /* QuikCode+Color.swift in Sources */,
 				E19EAE5D266FF67E00C9D5A0 /* QuikCodeApp.swift in Sources */,

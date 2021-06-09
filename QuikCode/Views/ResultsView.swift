@@ -10,46 +10,23 @@ import SwiftUI
 struct ResultsView: View {
     @Binding var image: UIImage?
     @Binding var showingResults: Bool
-    @State private var result: String? = nil
+    @State var scan: Scan? = nil
+    @State var showingError = false
     
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
-                if self.result == nil {
-                    Spacer()
-                    
-                    ProgressView()
-                    
-                    Spacer()
-                    
-                    VStack {
-                        Button(action: {}) {
-                            Text("Back").frame(maxWidth: 300)
-                        }
-                        .controlProminence(.increased)
-                        .keyboardShortcut(.defaultAction)
-                        .buttonStyle(.bordered)
-                        .controlSize(.large)
-                        .disabled(true)
-                    }
-                    .padding()
-                } else {
-                    Image(image: image!)
+                if showingError {
+                    Image(uiImage: image!)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .clipShape(RoundedRectangle(cornerRadius: 16))
                         .padding(.bottom)
                         .padding(.leading)
                         .padding(.trailing)
-                      
-                    if self.result == "Error" {
-                        Text("Invalid QR code")
-                            .padding(.bottom)
-                    } else {
-                        Text("Content:\n``\(self.result ?? "None")``")
-                            .padding(.bottom)
-                            .multilineTextAlignment(.center)
-                    }
+                    
+                    Text("Invalid QR code")
+                        .padding(.bottom)
                     
                     Spacer()
                     
@@ -65,6 +42,12 @@ struct ResultsView: View {
                         .controlSize(.large)
                     }
                     .padding()
+                } else {
+                    if self.scan == nil {
+                        LoadingView()
+                    } else {
+                        QRResultView(scan: scan!, showingResults: $showingResults)
+                    }
                 }
             }
             .task {
@@ -76,10 +59,8 @@ struct ResultsView: View {
     
     /// Called when the QR code has been scanned
     func scanned() {
-        guard let result = self.result else { return }
-        guard let image = self.image else { return }
-        
-        SavedScans.shared.scans.append(Scan(image: image.pngData()!, date: Date.now, result: result))
+        guard let result = self.scan else { return }
+        SavedScans.shared.scans.append(result)
     }
     
     /// Called when an image is received from ContentView
@@ -87,19 +68,50 @@ struct ResultsView: View {
     /// If the image is not a valid QR code, or an error occurs, a string containing "error" is returned
     func scanQRCode() {
         guard let ciImage = CIImage(image: self.image!) else {
-            self.result = "Error"
+            self.scan = nil
+            self.showingError = true
             return
         }
         
-        let detector = CIDetector(ofType: CIDetectorTypeQRCode,
-                                  context: CIContext(),
-                                  options: [CIDetectorAccuracy: CIDetectorAccuracyHigh])
+        let context = CIContext()
+        let options = [CIDetectorAccuracy: CIDetectorAccuracyHigh]
+        let detector = CIDetector(ofType: CIDetectorTypeQRCode, context: context, options: options)
+        
         guard let features = detector?.features(in: ciImage) else {
-            self.result = "Error"
+            self.scan = nil
+            self.showingError = true
             return
         }
         
-        self.result = (features.first as? CIQRCodeFeature)?.messageString ?? "Error"
-        scanned()
+        guard let message = (features.first as? CIQRCodeFeature)?.messageString else {
+            self.scan = nil
+            self.showingError = true
+            return
+        }
+        
+        self.scan = Scan(image: image!.pngData()!, date: Date.now, result: message)
+        self.scanned()
+    }
+}
+
+struct LoadingView : View {
+    var body: some View {
+        Spacer()
+        
+        ProgressView()
+        
+        Spacer()
+        
+        VStack {
+            Button(action: {}) {
+                Text("Back").frame(maxWidth: 300)
+            }
+            .controlProminence(.increased)
+            .keyboardShortcut(.defaultAction)
+            .buttonStyle(.bordered)
+            .controlSize(.large)
+            .disabled(true)
+        }
+        .padding()
     }
 }

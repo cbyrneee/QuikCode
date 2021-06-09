@@ -19,11 +19,13 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 List {
-                    if (savedScans.scans.isEmpty) {
-                        Text("You have not scanned an image yet! Scan it to see the result here.")
-                    } else {
-                        ForEach(savedScans.scans) { scan in
-                            ScanRowView(scan: scan)
+                    Section(header: Text("Previous scans")) {
+                        if (savedScans.scans.isEmpty) {
+                            Text("You have not scanned an image yet! Scan it to see the result here.")
+                        } else {
+                            ForEach(savedScans.scans) { scan in
+                                ScanRowView(scan: scan)
+                            }
                         }
                     }
                 }

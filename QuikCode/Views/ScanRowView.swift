@@ -8,11 +8,8 @@
 import SwiftUI
 
 struct ScanRowView: View {
-    private let scan: Scan
-    
-    init(scan: Scan) {
-        self.scan = scan
-    }
+    @State private var showingSheet = false
+    var scan: Scan
     
     var body: some View {
         HStack(spacing: 12) {
@@ -22,6 +19,15 @@ struct ScanRowView: View {
                 .frame(width: 32, height: 32)
             
             Text("Scan from \(self.scan.date.getLocaleDateAndTime())")
+        }
+        .onTapGesture {
+            self.showingSheet = true
+        }
+        .sheet(isPresented: $showingSheet) {
+            NavigationView {
+                QRResultView(scan: scan, showingResults: $showingSheet)
+                .navigationTitle("Scan from \(self.scan.date.getLocaleDateAndTime())")
+            }
         }
     }
 }
