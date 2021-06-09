@@ -54,21 +54,21 @@ struct ContentView: View {
             }
             .background(Color.systemGroupedBackground)
             .navigationTitle("QuikCode")
-        }
-        .actionSheet(isPresented: $showingActionSheet) {
-            ActionSheet(
-                title: Text("Scan new image"),
-                message: Text("Choose where to scan a new image from"),
-                buttons: [
-                    .default(Text("Camera"), action: {
-                        showingCamera = true
-                    }),
-                    .default(Text("Photo Library"), action: {
-                        showingImagePicker = true
-                    }),
-                    .cancel()
-                ]
-            )
+            .actionSheet(isPresented: $showingActionSheet) {
+                ActionSheet(
+                    title: Text("Scan new image"),
+                    message: Text("Choose where to scan a new image from"),
+                    buttons: [
+                        .default(Text("Camera"), action: {
+                            showingCamera = true
+                        }),
+                        .default(Text("Photo Library"), action: {
+                            showingImagePicker = true
+                        }),
+                        .cancel()
+                    ]
+                )
+            }
         }
         .sheet(isPresented: self.$showingImagePicker, onDismiss: {
             showingResults = self.selectedImage != nil
