@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E129A844266FFF2D00B9647C /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = E129A843266FFF2D00B9647C /* SwiftUIX */; };
 		E129A8472670008100B9647C /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E129A8462670008100B9647C /* ResultsView.swift */; };
 		E129A84A267005CA00B9647C /* Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = E129A849267005CA00B9647C /* Scan.swift */; };
 		E129A84C267005EF00B9647C /* ScanRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E129A84B267005EF00B9647C /* ScanRowView.swift */; };
@@ -16,6 +15,7 @@
 		E129A8552670192700B9647C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E129A8542670192700B9647C /* LICENSE */; };
 		E132B84B2670C135000ED70F /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132B84A2670C135000ED70F /* ImagePickerView.swift */; };
 		E132B84D2670C2C4000ED70F /* QuikCode+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132B84C2670C2C4000ED70F /* QuikCode+UIImage.swift */; };
+		E132B8502670C602000ED70F /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = E132B84F2670C602000ED70F /* SwiftUIX */; };
 		E19EAE5D266FF67E00C9D5A0 /* QuikCodeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19EAE5C266FF67E00C9D5A0 /* QuikCodeApp.swift */; };
 		E19EAE5F266FF67E00C9D5A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19EAE5E266FF67E00C9D5A0 /* ContentView.swift */; };
 		E19EAE61266FF68000C9D5A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E19EAE60266FF68000C9D5A0 /* Assets.xcassets */; };
@@ -49,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E129A844266FFF2D00B9647C /* SwiftUIX in Frameworks */,
+				E132B8502670C602000ED70F /* SwiftUIX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +152,7 @@
 			);
 			name = QuikCode;
 			packageProductDependencies = (
-				E129A843266FFF2D00B9647C /* SwiftUIX */,
+				E132B84F2670C602000ED70F /* SwiftUIX */,
 			);
 			productName = QuikCode;
 			productReference = E19EAE59266FF67E00C9D5A0 /* QuikCode.app */;
@@ -183,7 +183,7 @@
 			);
 			mainGroup = E19EAE50266FF67E00C9D5A0;
 			packageReferences = (
-				E129A842266FFF2D00B9647C /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+				E132B84E2670C602000ED70F /* XCRemoteSwiftPackageReference "SwiftUIX" */,
 			);
 			productRefGroup = E19EAE5A266FF67E00C9D5A0 /* Products */;
 			projectDirPath = "";
@@ -439,7 +439,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E129A842266FFF2D00B9647C /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+		E132B84E2670C602000ED70F /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
 			requirement = {
@@ -450,9 +450,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E129A843266FFF2D00B9647C /* SwiftUIX */ = {
+		E132B84F2670C602000ED70F /* SwiftUIX */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E129A842266FFF2D00B9647C /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			package = E132B84E2670C602000ED70F /* XCRemoteSwiftPackageReference "SwiftUIX" */;
 			productName = SwiftUIX;
 		};
 /* End XCSwiftPackageProductDependency section */
