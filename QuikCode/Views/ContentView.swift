@@ -84,7 +84,7 @@ struct ContentView: View {
         .sheet(isPresented: $showingResults, onDismiss: {
             self.selectedImage = nil
         }) {
-            ResultsView(showingResults: $showingResults, image: $selectedImage)
+            ResultsView(image: $selectedImage, showingResults: $showingResults)
         }
     }
     
