@@ -14,6 +14,8 @@
 		E129A84F2670094500B9647C /* SavedScans.swift in Sources */ = {isa = PBXBuildFile; fileRef = E129A84E2670094500B9647C /* SavedScans.swift */; };
 		E129A852267015A200B9647C /* QuikCode+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E129A851267015A200B9647C /* QuikCode+Date.swift */; };
 		E129A8552670192700B9647C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E129A8542670192700B9647C /* LICENSE */; };
+		E132B84B2670C135000ED70F /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132B84A2670C135000ED70F /* ImagePickerView.swift */; };
+		E132B84D2670C2C4000ED70F /* QuikCode+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132B84C2670C2C4000ED70F /* QuikCode+UIImage.swift */; };
 		E19EAE5D266FF67E00C9D5A0 /* QuikCodeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19EAE5C266FF67E00C9D5A0 /* QuikCodeApp.swift */; };
 		E19EAE5F266FF67E00C9D5A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19EAE5E266FF67E00C9D5A0 /* ContentView.swift */; };
 		E19EAE61266FF68000C9D5A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E19EAE60266FF68000C9D5A0 /* Assets.xcassets */; };
@@ -30,6 +32,9 @@
 		E129A851267015A200B9647C /* QuikCode+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuikCode+Date.swift"; sourceTree = "<group>"; };
 		E129A853267018A100B9647C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E129A8542670192700B9647C /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		E132B8492670BF35000ED70F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E132B84A2670C135000ED70F /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		E132B84C2670C2C4000ED70F /* QuikCode+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuikCode+UIImage.swift"; sourceTree = "<group>"; };
 		E19EAE59266FF67E00C9D5A0 /* QuikCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuikCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E19EAE5C266FF67E00C9D5A0 /* QuikCodeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuikCodeApp.swift; sourceTree = "<group>"; };
 		E19EAE5E266FF67E00C9D5A0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,6 +63,7 @@
 				E129A8462670008100B9647C /* ResultsView.swift */,
 				E129A84B267005EF00B9647C /* ScanRowView.swift */,
 				E1FDEF842670AC34006CE90C /* QRResultView.swift */,
+				E132B84A2670C135000ED70F /* ImagePickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -83,6 +89,7 @@
 			children = (
 				E19EAE6A266FFB3E00C9D5A0 /* QuikCode+Color.swift */,
 				E129A851267015A200B9647C /* QuikCode+Date.swift */,
+				E132B84C2670C2C4000ED70F /* QuikCode+UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -108,6 +115,7 @@
 		E19EAE5B266FF67E00C9D5A0 /* QuikCode */ = {
 			isa = PBXGroup;
 			children = (
+				E132B8492670BF35000ED70F /* Info.plist */,
 				E19EAE60266FF68000C9D5A0 /* Assets.xcassets */,
 				E19EAE62266FF68000C9D5A0 /* Preview Content */,
 				E129A8502670159600B9647C /* Extensions */,
@@ -208,7 +216,9 @@
 				E129A84F2670094500B9647C /* SavedScans.swift in Sources */,
 				E19EAE5F266FF67E00C9D5A0 /* ContentView.swift in Sources */,
 				E129A84A267005CA00B9647C /* Scan.swift in Sources */,
+				E132B84B2670C135000ED70F /* ImagePickerView.swift in Sources */,
 				E129A852267015A200B9647C /* QuikCode+Date.swift in Sources */,
+				E132B84D2670C2C4000ED70F /* QuikCode+UIImage.swift in Sources */,
 				E1FDEF852670AC34006CE90C /* QRResultView.swift in Sources */,
 				E129A8472670008100B9647C /* ResultsView.swift in Sources */,
 				E19EAE6B266FFB3E00C9D5A0 /* QuikCode+Color.swift in Sources */,
@@ -346,6 +356,11 @@
 				DEVELOPMENT_TEAM = 469MLTNL8A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QuikCode/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = QuikCode;
+				INFOPLIST_KEY_CFBundleName = QuikCode;
+				INFOPLIST_KEY_CFBundleVersion = 1;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We must use the camera to be able to scan QR codes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -376,6 +391,11 @@
 				DEVELOPMENT_TEAM = 469MLTNL8A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QuikCode/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = QuikCode;
+				INFOPLIST_KEY_CFBundleName = QuikCode;
+				INFOPLIST_KEY_CFBundleVersion = 1;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We must use the camera to be able to scan QR codes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

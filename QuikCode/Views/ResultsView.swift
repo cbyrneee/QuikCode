@@ -16,8 +16,8 @@ struct ResultsView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
-                if showingError {
-                    Image(uiImage: image!)
+                if (showingError && image != nil) {
+                    Image(uiImage: (image?.fixOrientation())!)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .clipShape(RoundedRectangle(cornerRadius: 16))
@@ -67,7 +67,13 @@ struct ResultsView: View {
     /// Uses [CIImage] and [CIDetector] to read from the [UIImage] and returns a string of the QR's contents
     /// If the image is not a valid QR code, or an error occurs, a string containing "error" is returned
     func scanQRCode() {
-        guard let ciImage = CIImage(image: self.image!) else {
+        guard let image = self.image?.fixOrientation() else {
+            self.scan = nil
+            self.showingResults = false
+            return
+        }
+        
+        guard let ciImage = CIImage(image: image) else {
             self.scan = nil
             self.showingError = true
             return
@@ -89,7 +95,7 @@ struct ResultsView: View {
             return
         }
         
-        self.scan = Scan(image: image!.pngData()!, date: Date.now, result: message)
+        self.scan = Scan(image: image.pngData()!, date: Date.now, result: message)
         self.scanned()
     }
 }

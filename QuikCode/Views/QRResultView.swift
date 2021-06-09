@@ -26,7 +26,7 @@ struct QRResultView: View {
                  Text("Invalid QR code")
                      .padding(.bottom)
              } else {
-                 Text("Content:\n``\(self.scan.result)``")
+                 Text("Content:\n``\(self.scan.result.isEmpty ? "Empty QR Code" : self.scan.result)``")
                      .padding(.bottom)
                      .multilineTextAlignment(.center)
              }

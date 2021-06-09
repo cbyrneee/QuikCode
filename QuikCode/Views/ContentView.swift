@@ -11,8 +11,12 @@ import SwiftUIX
 struct ContentView: View {
     @State private var showingImagePicker = false
     @State private var showingResults = false
+    @State private var showingCamera = false
+    @State private var showingActionSheet = false
+
     @State private var data: Data?
     @State private var selectedImage: UIImage?
+    
     @ObservedObject private var savedScans = SavedScans.shared
     
     var body: some View {
@@ -32,7 +36,7 @@ struct ContentView: View {
                 
                 VStack {
                     Button(action: {
-                        showingImagePicker = true
+                        showingActionSheet = true
                     }) {
                         Text("Scan new image").frame(maxWidth: 300)
                     }
@@ -48,16 +52,39 @@ struct ContentView: View {
                 .controlSize(.large)
                 .padding()
             }
-            .sheet(isPresented: $showingResults) {
-                ResultsView(image: $selectedImage, showingResults: $showingResults)
-            }
-            .sheet(isPresented: $showingImagePicker, onDismiss: {
-                showingResults = true
-            }) {
-                ImagePicker(image: $selectedImage)
-            }
             .background(Color.systemGroupedBackground)
             .navigationTitle("QuikCode")
+        }
+        .actionSheet(isPresented: $showingActionSheet) {
+            ActionSheet(
+                title: Text("Scan new image"),
+                message: Text("Choose where to scan a new image from"),
+                buttons: [
+                    .default(Text("Camera"), action: {
+                        showingCamera = true
+                    }),
+                    .default(Text("Photo Library"), action: {
+                        showingImagePicker = true
+                    }),
+                    .cancel()
+                ]
+            )
+        }
+        .sheet(isPresented: self.$showingImagePicker, onDismiss: {
+            showingResults = self.selectedImage != nil
+        }) {
+            ImagePickerView(image: $selectedImage, isPresented: $showingImagePicker)
+        }
+        .sheet(isPresented: self.$showingCamera, onDismiss: {
+            showingResults = self.selectedImage != nil
+        }) {
+            ImagePickerView(sourceType: .camera, image: $selectedImage, isPresented: $showingCamera)
+                .edgesIgnoringSafeArea(.bottom)
+        }
+        .sheet(isPresented: $showingResults, onDismiss: {
+            self.selectedImage = nil
+        }) {
+            ResultsView(showingResults: $showingResults, image: $selectedImage)
         }
     }
     
