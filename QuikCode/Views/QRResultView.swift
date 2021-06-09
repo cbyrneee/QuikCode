@@ -21,12 +21,19 @@ struct QRResultView: View {
                 .padding(.leading)
                 .padding(.trailing)
             
-            
              if self.scan.result == "Error" {
                  Text("Invalid QR code")
                      .padding(.bottom)
              } else {
                  Text("Content:\n``\(self.scan.result.isEmpty ? "Empty QR Code" : self.scan.result)``")
+                     .contextMenu {
+                         Button(action: {
+                             UIPasteboard.general.string = self.scan.result
+                         }) {
+                             Text("Copy to clipboard")
+                             Image(systemName: "doc.on.doc")
+                         }
+                      }
                      .padding(.bottom)
                      .multilineTextAlignment(.center)
              }
